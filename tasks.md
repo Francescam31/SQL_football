@@ -54,7 +54,6 @@ SELECT COUNT(DISTINCT hometeam) FROM matches WHERE division_code LIKE 'F%';
 7) Have Huddersfield played Swansea in any of the recorded matches?
 
 ```sql
-<!-- Copy solution here -->
 SELECT count(*) FROM matches WHERE (hometeam = 'Huddersfield' AND awayteam = 'Swansea') OR (hometeam = 'Swansea' AND awayteam = 'Huddersfield');
 
 ```
@@ -81,7 +80,7 @@ SELECT fthg, ftag, fthg + ftag AS Total FROM matches WHERE division_code = 'E0' 
 10) In which division and which season were the most goals scored?
 
 ```sql
-<!-- Copy solution here -->
+SELECT division_code, season, fthg + ftag AS Total FROM matches ORDER BY (fthg + ftag) DESC, fthg DESC LIMIT 1;
 
 
 ```
