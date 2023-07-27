@@ -83,6 +83,7 @@ SELECT fthg, ftag, fthg + ftag AS Total FROM matches WHERE division_code = 'E0' 
 ```sql
 SELECT division_code, season, fthg + ftag AS Total FROM matches ORDER BY (fthg + ftag) DESC, fthg DESC LIMIT 1;
 -- SELECT division_code, SUM (fthg +ftag) FROM matches GROUP BY division_code, season ORDER BY sUM DESC LIMIT 1;
+--SELECT name FROM divisions WHERE code = 'EC';
 
 ```
 
