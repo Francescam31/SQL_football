@@ -47,6 +47,7 @@ SELECT DISTINCT hometeam FROM matches WHERE hometeam LIKE '%City%';
 
 ```sql
 SELECT COUNT(DISTINCT hometeam) FROM matches WHERE division_code LIKE 'F%';
+--WHERE division_code IN ('F1', 'F2');
 
 
 ```
@@ -63,7 +64,7 @@ SELECT count(*) FROM matches WHERE (hometeam = 'Huddersfield' AND awayteam = 'Sw
 ```sql
 SELECT code FROM divisions WHERE name = 'Eredivisie';
 SELECT COUNT(*) FROM matches WHERE division_code = 'N1' AND (fthg = ftag) AND (season <= 2015) AND (season >= 2010);
-
+-- season BETWEEN 2010 AND 2015
 
 ```
 
@@ -81,7 +82,7 @@ SELECT fthg, ftag, fthg + ftag AS Total FROM matches WHERE division_code = 'E0' 
 
 ```sql
 SELECT division_code, season, fthg + ftag AS Total FROM matches ORDER BY (fthg + ftag) DESC, fthg DESC LIMIT 1;
-
+-- SELECT division_code, SUM (fthg +ftag) FROM matches GROUP BY division_code, season ORDER BY sUM DESC LIMIT 1;
 
 ```
 
